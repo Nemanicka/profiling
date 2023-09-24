@@ -292,17 +292,21 @@ func toInt(str string) int {
     return val
 }
 
-//func insertHandler(w http.ResponseWriter, r *http.Request) {
-//    time.Sleep(1*time.Second)
-//}
-
-//var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to `file`")
 
 func main() {
     fmt.Println("# of elements,operation,duration (ns)")
-    for i:=10; i<10000000; i+=100 {
-        benchmark(  1, i, i, 0 )
+    j:=100
+    for i:=1000; i<10000000; i+=j {
+        benchmark( 1, i, i, 0 )
+        if i < 10000 {
+            j = 100
+        } else if i < 100000 {
+            j = 1000
+        } else if i < 1000000 {
+            j = 10000
+        }  else if i < 10000000 {
+            j = 100000
+        } 
     }
-   //benchmark(  1, 10000000, 10000000, 0 )
 }
 
