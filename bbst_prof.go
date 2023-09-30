@@ -296,7 +296,7 @@ func toInt(str string) int {
 func main() {
     fmt.Println("# of elements,operation,duration (ns)")
     j:=100
-    for i:=1000; i<10000; i+=j {
+    for i:=1000; i<10000000; i+=j {
         benchmark( 1, i, i, 0 )
         if i < 10000 {
             j = 100
