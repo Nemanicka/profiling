@@ -22,4 +22,9 @@ jobs:
         go-version: '1.20'
 
     - name: Run
-      run: go run bbst_prof.go > bench.csv
+      run: go run bbst_prof.go > /tmp/bench.csv
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: bench.csv
+        path: /tmp/bench.csv
