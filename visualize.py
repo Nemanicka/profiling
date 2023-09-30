@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import time
 import sys
 
-df = pd.read_csv('bench.csv')
+df = pd.read_csv(sys.argv[1])
 
 print(type(df))
 
@@ -34,7 +34,7 @@ plt.ylabel('duration (ns)')
 plt.title('Extrapolated Data')
 #plt.show()
 #fig = plt.figure()
-plt.savefig(sys.argv[1])
+plt.savefig(sys.argv[2])
 #plt.plot([1,2,3])
 #plt.show()
 #time.sleep(10)

@@ -38,7 +38,7 @@ jobs:
         name: bench.csv
         path: /tmp/bench.csv
     - name: createFigure
-      run: python3 visualize.py /tmp/complexity.png
+      run: python3 visualize.py /tmp/bench.csv /tmp/complexity.png
 
     - uses: actions/upload-artifact@v3
       with: 
