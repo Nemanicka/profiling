@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import time
+import sys
 
 df = pd.read_csv('bench.csv')
 
@@ -31,8 +32,9 @@ plt.plot(mem_df['# of elements'].to_numpy()[:,None], mem_df['duration (ns)'].to_
 plt.xlabel('# of elements')
 plt.ylabel('duration (ns)')
 plt.title('Extrapolated Data')
-plt.show()
-
+#plt.show()
+#fig = plt.figure()
+plt.savefig(sys.argv[1])
 #plt.plot([1,2,3])
 #plt.show()
 #time.sleep(10)
